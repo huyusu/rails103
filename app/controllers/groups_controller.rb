@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class GroupsController < ApplicationController
+  before_action :authenticate_user!, only: [:new]
   def index
     @groups = Group.all
   end
